@@ -1,0 +1,37 @@
+<section id="section-{{ section.id }}" class="section" data-section-id="{{ section.id }}" data-section-type="reassurance">
+  <div class="container homepage__container">
+    <div class="homepage__content">
+      {% render 'image', img : section.settings.image, classes : 'homepage__image' %}
+      <div class="homepage__nav">
+        {% for link in linklists[section.settings.menu].links %}
+          <a class="heading header__nav-item" href="{{ link.url }}">{{ link.title }}</a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+{
+  "name": "Homepage",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu"
+    }
+  ],
+	"presets": [
+		{
+			"name": "Homepage",
+			"category": "Zerance"
+		}
+	]
+}
+{% endschema %}

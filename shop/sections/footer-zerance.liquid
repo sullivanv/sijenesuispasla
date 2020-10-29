@@ -1,0 +1,20 @@
+<footer class="footer-zerance">
+  <div class="footer-zerance__nav">
+    {% for link in linklists[section.settings.menu].links %}
+      <a class="heading footer-zerance__nav-item" href="{{ link.url }}">{{ link.title }}</a>
+    {% endfor %}
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+      {
+        "type": "link_list",
+        "id": "menu",
+        "label": "Menu"
+      }
+  ]
+}
+{% endschema %}
