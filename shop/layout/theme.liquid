@@ -168,6 +168,25 @@
 
 <body class="template-{{ request.page_type | handle }}">
 
+  {% if template contains 'earthsucks' %}
+  <style>
+  .announcement-bar, .footer-zerance {
+    background-color: #0c4c38 !important;
+  }
+  .site-nav.list--inline li:last-of-type span {
+    color:black;
+  }
+  </style>
+  {% else %}
+  <style>
+  .site-nav.list--inline li:last-of-type span {
+    color:#0c4c38;
+  }
+  </style>
+  {% endif %}
+
+
+
   <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
 
   {%- if settings.enable_ajax -%}
